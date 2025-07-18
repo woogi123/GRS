@@ -1,0 +1,26 @@
+{
+    "code": 200,
+    "httpStatus": "OK",
+    "message": "요청에 성공하였습니다.",
+		"data": {
+        "countries" : [
+            { 
+							"id" : "1",
+							"countryCode" : "ko",
+							"countryName" : "대한민국" 
+						},
+            { 
+							"id" : "2",
+							"countryCode" : "jp",
+							"countryName" : "일본" 
+						},
+            { 
+							"id" : "3",
+							"countryCode" : "cn",
+							"countryName" : "중국"
+						}
+
+						
+        ]
+		}
+}

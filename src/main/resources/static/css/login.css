@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+nav {
+    display:flex;
+    position: relative;
+    width: 1513px;
+    height: 259px;
+    margin: 0 auto;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.wrap_logo {
+    position: absolute;
+    overflow: hidden;
+    width: 127px;
+    height: 110px;
+}
+.wrap_logo img {
+    width: 100%;
+    cursor: pointer;
+}
+main{
+    display:flex;
+    font-size: 26px;
+    position: relative;
+    width: 1513px;
+    height: 386px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+}
+.wrap_login{
+    margin:0 auto;
+    padding:40px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.wrap_login input{
+    width:487px;
+    height:66px;
+    border:1px solid #CCCCCC;
+    border-radius: 10px;
+    font-size: 29px;
+    margin-bottom:30px;
+    padding-left: 12px;
+    padding-bottom: 3px;
+    
+}
+.wrap_login input::placeholder{
+    font-size: 26px;
+    text-align: left;
+    
+}
+
+.login_btn{
+    width:501px;
+    height:66px;
+    border-radius: 10px;
+    background-color: #0029BA;
+    text-align: center;
+    color:white;
+    margin-top: 30px;
+    font-size: 26px;
+    font-weight:bold ;
+    
+}
+
+footer{
+    display:flex;
+    position: relative;
+    width: 1513px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    font-size: 16px;
+    color:#737373;
+    
+}
+ul.wrap_service>li {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 4px;
+    cursor: pointer;
+    border: solid 1px white;
+}
+
+
+

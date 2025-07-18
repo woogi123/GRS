@@ -1,0 +1,27 @@
+{
+    "code": 200,
+    "httpStatus": "OK",
+    "message": "요청에 성공하였습니다.",
+    "data": [{
+            "code": "GH",
+            "countryName": "가나",
+            "ImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/22px-Flag_of_Ghana.svg.png"
+        },
+        {
+            "code": "GA",
+            "countryName": "가봉",
+            "ImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Flag_of_Gabon.svg/22px-Flag_of_Gabon.svg.png"
+        },
+        {
+            "code": "GY",
+            "countryName": "가이아나",
+            "ImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_Guyana.svg/22px-Flag_of_Guyana.svg.png"
+        },
+        {
+            "code": "US",
+            "countryName": "미국",
+            "ImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_Guyana.svg/22px-Flag_of_Guyana.svg.png"
+        }
+
+    ]
+}

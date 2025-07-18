@@ -1,0 +1,12 @@
+{
+    "code": 200,
+    "httpStatus": "OK",
+    "message": "요청에 성공하였습니다.",
+    "data": {
+        "userName": "이서연",
+        "email": "lsy021128@naver.com",
+        "picture": "",
+        "nickName": "seoyeon"
+    }
+
+}

@@ -1,0 +1,14 @@
+{
+    "code": 200,
+    "httpStatus": "OK",
+    "message": "요청에 성공하였습니다.",
+		"data": {
+        "banks" : [
+            { 
+								"bankCode" : "ECA",
+								"bankName" : "한국수출은행환율" 
+						}
+        
+        ]
+		}
+}

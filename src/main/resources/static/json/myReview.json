@@ -1,0 +1,39 @@
+{
+    "code": 200,
+    "httpStatus": "OK",
+    "message": "요청에 성공하였습니다.",
+    "data": [{
+            "countryInfo": {
+                "code": "GH",
+                "countryName": "가나",
+                "ImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/22px-Flag_of_Ghana.svg.png"
+            },
+            "post_id": "24",
+            "title": "미국 갱스터 피하는 법",
+            "contents": "오늘은 갱스터 피하는 법을 알아볼텐데요! 저도 궁금하네요 ~~",
+            "created_at": "2023-06-27 16:46:08"
+        },
+        {
+            "countryInfo": {
+                "code": "GH",
+                "countryName": "가나다",
+                "ImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/22px-Flag_of_Ghana.svg.png"
+            },
+            "post_id": "25",
+            "title": "미국 갱스터 피하는 법",
+            "contents": "오늘은 갱스터 피하는 법을 알아볼텐데요! 저도 궁금하네요 ~~",
+            "created_at": "2023-06-27 16:46:08"
+        },
+        {
+            "countryInfo": {
+                "code": "GH",
+                "countryName": "가나다라",
+                "ImageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/22px-Flag_of_Ghana.svg.png"
+            },
+            "post_id": "25",
+            "title": "미국 갱스터 피하는 법",
+            "contents": "오늘은 갱스터 피하는 법을 알아볼텐데요! 저도 궁금하네요 ~~",
+            "created_at": "2023-06-27 16:46:08"
+        }
+    ]
+}

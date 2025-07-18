@@ -1,0 +1,14 @@
+{
+    "code": 200,
+    "httpStatus": "OK",
+    "message": "요청에 성공하였습니다.",
+    "data": {
+        "userName": "이서연",
+        "email": "lsy021128@naver.com",
+        "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Ghana.svg/22px-Flag_of_Ghana.svg.png",
+        "nickName": "seoyeon",
+        "userId": "likelion123",
+        "userPw": "LionKing0070*"
+    }
+
+}

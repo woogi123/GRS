@@ -1,0 +1,11 @@
+{
+    "code": 200,
+    "httpStatus": "OK",
+    "message": "요청에 성공하였습니다.",
+    "data": {
+        "meal": "15000",
+        "transport": "10000",
+        "accom": "16000",
+        "coffee": "17000"
+    }
+}

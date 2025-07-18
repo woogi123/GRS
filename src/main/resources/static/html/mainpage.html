@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인페이지</title>
+    <script src="https://kit.fontawesome.com/fe66068d41.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/mainpage.css">
+   
+
+    <style>
+        a:link:not(.a-community),
+        a:visited:not(.a-community) {
+            color: black;
+        }
+
+        .a-community {
+            color:black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <div class="wrap_logo">
+            <a href="#"><img src="../img/logo.png" alt=""></a>
+        </div>
+        <div class="wrap_menu">
+            <ul class="menu">
+                <li>
+                    <a href="./community.html" class="a-community">커뮤니티</a>
+                </li>
+                <li>
+                    <a href="./exchangeRate.html" class="a-exchange">환율</a>
+                </li>
+                <li class="menu-price">
+                    <a href="./pricecomparison.html" class="a-price">가격비교</a>
+                </li>
+                <li class="menu-customer">
+                    <a href="#" class="a-customer">고객지원</a>
+                </li>
+            </ul>
+        </div>
+        <div class="wrap_login-bar">
+            <ul class="login-bar">
+                <li>
+                    <div class="login_logo">로그인</div></li>
+                <li>
+                    <div class="logout_logo">회원가입</div></li>
+            </ul>
+        </div>
+        <div class="wrap_search">
+            <input type="text" placeholder="검색어를 입력해 주세요.">
+            <i class="fas fa-search"></i>
+        </div>
+    </nav>
+    <main>
+    <div class="wrap-map">
+        <div class="map">
+            <canvas id="myChart"></canvas>
+        
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/chartjs-chart-geo@3.5.1/build/index.umd.min.js"></script>
+        
+        <script>
+          var valueArray =[];
+          // CSV 파일 불러오기
+          function readCSVFile(path) {
+            return new Promise((resolve, reject) => {
+              const xhr = new XMLHttpRequest();
+      
+              xhr.onload = (event) => {
+                if (xhr.status === 200) {
+                  const csvData = xhr.responseText;
+                  resolve(csvData);
+                } else {
+                  reject(new Error('Failed to load CSV file'));
+                }
+              };
+      
+              xhr.onerror = (event) => {
+                reject(new Error('Failed to load CSV file'));
+              };
+      
+              xhr.open('GET', path, true);
+              xhr.send();
+            });
+          }
+      
+          // CSV 데이터 가공
+          function processCSVData(csvData) {
+            const rows = csvData.split('\n');
+            const result = [];
+      
+            for (let i = 0; i < rows.length; i++) {
+              const row = rows[i].trim();
+              if (row !== '') {
+                const columns = row.split(',');
+                result.push(columns);
+              }
+            }
+      
+            return result;
+          }
+      
+          // CSV 파일 경로
+          const csvFilePath = '../assets/data.csv';
+      
+          // CSV 파일 불러오기 및 처리
+          readCSVFile(csvFilePath)
+            .then((csvData) => {
+              // CSV 데이터 가공
+              const processedData = processCSVData(csvData);
+      
+              // 배열 항목 출력
+              processedData.forEach((item) => {
+                valueArray.push(item);
+              });
+              console.log(valueArray)
+            })
+            .catch((error) => {
+              console.error('CSV 파일 읽기 오류:', error);
+            });
+       
+
+            const url = 'https://unpkg.com/world-atlas@2.0.2/countries-50m.json'
+
+            fetch(url).then((result) => result.json()).then((datapoint) => {
+                const countries = ChartGeo.topojson.feature(datapoint, datapoint.objects.countries).features;
+
+                console.log()
+
+                const data = {
+                  labels: countries.map((country) => country.properties.name),
+                  datasets: [
+                    {
+                      label: 'Countries',
+                      data: countries.map((country) => {
+                        const matchedItem = valueArray.find((item) => item[0] === country.properties.name);
+                        console.log(matchedItem)
+                        const value = matchedItem ? matchedItem[2] : null;
+                        console.log(value)
+                        return { feature: country, value: Math.random(), item:value };
+                      }),
+                    },
+                  ],
+                };
+
+                const config = {
+                    type: 'choropleth',
+                    data,
+                    options: {
+                        //showGraticule: true,
+                        scales: {
+                            xy: {
+                                projection : 'naturalEarth1'
+                            },
+                            
+                        },
+                        plugins: {
+                            legend: {
+                                display : false
+                            }
+                        }
+                    }
+                };
+
+                const myChart = new Chart(
+                    document.getElementById('myChart'),
+                    config
+                )
+                document.getElementById("myChart").onclick = function (evt) {
+                  var activePoints = myChart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+          
+                  if (activePoints.length > 0) {
+                    var clickedElementIndex = activePoints[0].index;
+          
+                    var label = myChart.data.labels[clickedElementIndex];
+          
+                    var item = myChart.data.datasets[0].data[clickedElementIndex].item;
+                        console.log(item)
+                    $.ajax({
+                      type: 'GET',
+                      url: `http://grishare.ap-northeast-2.elasticbeanstalk.com/api/nation/${item}`,
+                      success: function(data) {
+                                console.log(data);
+                                console.log(data.data);
+                              var $nationWarning = $('<div>').addClass('nationWarning').text(data.data.nationName);
+                              var $nationName = $('<div>').addClass('natioinName').text(data.data.nationWarning);
+                  
+                              $('#wrap-danger').append($nationWarning).append($nationName)
+                          
+                      },
+                      error: function() {
+                          //alert('통신 실패시에만 실행');
+                          console.log("실패");
+                      }
+                  });
+                  }
+                };
+            })
+            
+        
+        </script>
+        </div>
+        <div class="map-sub">
+            <div class="map-text">
+                <div id="wrap-danger"></div>
+            </div>
+            <div class="button">
+                <button class="button-map" type="button"><a href="#">관련 커뮤니티 가기</a></button>
+            </div>
+        </div>
+    </div>
+    <div class="wrap-infotorate">
+        <div class="wrap-myinfo">
+            <div class="wrap-myinfo-sub">
+                <h2>내 정보</h2>
+                <div class="my-whole-see">
+                    <a href="./mypage.html">전체보기</a>
+                </div>
+            </div>
+            <div class="container-myinfo">
+                <div id="wrap-myid"><div>
+                    <button onclick="location.href='./mypageMod.html'" class="button-my" type="button">회원정보 수정</button>
+                </div></div>
+                <div class="myinfo">
+                </div>
+                <div class="name">
+                </div>
+            </div>
+            <div class="intnation">
+                <h2>관심국가</h2>
+                <div id="wrap-intnation"></div>
+                <!-- <div class="nation">
+                    <img class="nation-img" src="../img/germany.jpg" alt="germany">
+                    <a href="#">독일</a>
+                </div>
+                <div class="nation">
+                    <img class="nation-img" src="../img/spain.png">
+                    <a href="#">스페인</a>
+                </div>
+                <div class="nation">
+                    <img class="nation-img" src="../img/turkey.png">
+                    <a href="#">튀르키예</a>
+                </div> -->
+            </div>
+        </div>
+        <div class="wrap-hot">
+            <div class="hot">
+                <div class="wrap-hotsub">
+                    <h2>HOT 게시물</h2>
+                    <div class="hot-whole-see">
+                        <a href="./community.html">전체보기</a>
+                    </div>
+                </div>
+                <div class="collum">
+                    <div id="wrap-hot-writes"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="wrap-monrate">
+            <div class="monrate">
+                <h2>오늘 환율</h2>
+                <div id="today-exchangeRate"></div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <footer>
+        <div class="wrap_company">
+            <p style="font-size: 22px; margin-bottom: 12px;">COMPANY</p>
+            <p style="font-size: 14px; margin-bottom: 5px;">(주)어쩌고</p>
+            <p style="font-size: 14px;">사업자번호 : 123-45-67890</p>
+        </div>
+        <div class="wrap_contact">
+            <p style="font-size: 22px; margin-bottom: 12px;">CONTACT</p>
+            <p style="font-size: 14px; margin-bottom: 5px;">고객센터 : 02-000-000</p>
+            <p style="font-size: 14px; margin-bottom: 5px;">-오전 10시 ~ 오후 6시까지 운영</p>
+            <p style="font-size: 14px;">-주말 및 공휴일, 점심시간(12:00~13:00) 제외</p>
+        </div>
+
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/hot.js"></script>
+    <script src="../js/changerate_nation.js"></script>
+    <script src="../js/intnation.js"></script>
+
+    <script src="../js/loginSuccess.js"></script>
+    <script src="../js/myinfo.js"></script>
+
+</body>
+
+</html>

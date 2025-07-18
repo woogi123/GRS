@@ -1,0 +1,46 @@
+[{
+			"post_id" : "1",
+			"title" : "미국 갱스터 피하는 법",
+			"contents" : "오늘은 갱스터 피하는 법을 알아볼텐데요! 저도 궁금하네요 ~~",
+			"userName" : "김동현",
+			"created_at" : "2023-06-27 16:46:08",
+			"views" : "65",
+			"like" : "4",
+			"comment" : [
+			{
+					"comment_id" : "1",
+					"userName" : "이은지",
+					"contents" : "유익한 글 감사합니다~~",
+					"updated_at" : "2023-06-27 16:48:08",
+					"reply" : [
+							{
+							"reply_id" : "1",
+							"userName" : "김동현",
+							"contents" : "(비밀 댓글입니다.)",
+							"updated_at" : "2023-06-27 16:50:40"
+							},
+							{
+							"reply_id" : "2",
+							"userName" : "이은지",
+							"contents" : "(비밀 댓글입니다.)",
+							"updated_at" : "2023-06-27 16:52:40"
+							}
+					]
+			},
+			{
+					"comment_id" : "2",
+					"userName" : "이서연",
+					"contents" : "저희 이웃해요 ~~",
+					"updated_at" : "2023-06-27 18:25:08",
+					"reply" : []
+			}]}
+			,{
+				"post_id" : "24",
+				"title" : "도레미파솔라시도",
+				"contents" : "가나다라마바사아자차카타파하 ~~",
+				"userName" : "홍우기",
+				"created_at" : "2023-06-27 16:46:08",
+				"views" : "65",
+				"like" : "4",
+				"comment" : "none"
+    		}]

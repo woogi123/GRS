@@ -1,0 +1,16 @@
+{
+    "code": 200,
+    "httpStatus": "OK",
+    "message": "요청에 성공하였습니다.",
+    "data": [{
+            "code": "US-NV",
+            "ADName": "네바다 주",
+            "ImageUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Nevada.svg"
+        },
+        {
+            "code": "US-NE",
+            "ADName": "네브래스카 주",
+            "ImageUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Nebraska.svg"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+
+ [
+            { 
+								"countryName" : "대한민국" ,
+								"exchangeRate" : "1000" 
+						},
+            {  
+								"countryName" : "일본" ,
+								"exchangeRate" : "109.12" 
+						},
+            {  
+								"countryCode" : "cn",
+								"countryName" : "중국",
+								"exchangeRate" : "5.55" 
+						}
+]
+        
