@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRS</title>
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/fe66068d41.js" crossorigin="anonymous"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="/css/mypageMod.css">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+    <!-- <style>
+        a:link,
+        a:visited {
+            color: black;
+        }
+    </style> -->
+</head>
+
+<body>
+    <nav>
+        <div class="wrap_logo">
+            <a href="/html/mainpage.html"><img src="/img/logo.png" alt=""></a>
+        </div>
+        <div class="wrap_menu">
+            <ul class="menu">
+                <li>
+                    <a href="/html/community.html" class="a-community">커뮤니티</a></li>
+                <li>
+                    <a href="/html/exchangeRate.html" class="a-exchange">환율</a></li>
+                <li class="menu-price">
+                    <a href="/html/priceComparison.html" class="a-price">가격비교</a></li>
+                <li class="menu-customer">
+                    <a href="#" class="a-customer">고객지원</a></li>
+            </ul>
+        </div>
+        <div class="wrap_login-bar">
+            <ul class="login-bar">
+                <li>
+                    <a class="loginBtn" href="/html/login.html">로그인</a></li>
+                <li>
+                    <a class="signupBtn" href="/html/signUp.html">회원가입</a></li>
+            </ul>
+        </div>
+        <div class="wrap_search">
+            <input type="text" placeholder="검색어를 입력해 주세요.">
+            <i class="fas fa-search"></i>
+        </div>
+    </nav>
+
+    <section class="wrap_content">
+        <div class="wrap_img">
+            <img src="/img/earth.jpg" alt="">
+        </div>
+
+        <div class="wrap_memberInfor">
+            <form action="">
+                <div class="wrap_picture">
+                    <img id="picture" src="/img/user.png" alt="" class="profile">
+                    <input type="file" id="picture_input" accept="image/*">
+                </div>
+            </form>
+            <img src="/img/modify.png" alt="" class="modify" id="modify">
+            <div class="wrap_title">
+                <p>이름</p>
+                <p>이메일</p>
+                <p>닉네임</p>
+                <p>아이디</p>
+                <p>비밀번호</p>
+            </div>
+            <div class="wrap_infor">
+                <div class="wrap_pen">
+                    <img src="/img/pen.png" alt="" class="pen">
+                    <img src="/img/pen.png" alt="" class="pen">
+                    <img src="/img/pen.png" alt="" class="pen">
+                </div>
+                <p class="input_name" id="input_name"></p>
+                <p class="input_email" id="input_email"></p>
+                <form action="">
+                    <input class="input_nick" type="text" id="input_nick">
+                    <input class="input_id" type="text" id="input_id">
+                    <input class="input_pw" type="text" id="input_pw">
+                </form>
+
+            </div>
+            <button class="infor_modify" onclick="submit()"><a href="#">수정 완료</a></button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap_company">
+            <p style="font-size: 22px; margin-bottom: 12px;">COMPANY</p>
+            <p style="font-size: 14px; margin-bottom: 5px;">(주)어쩌고</p>
+            <p style="font-size: 14px;">사업자번호 : 123-45-67890</p>
+        </div>
+        <div class="wrap_contact">
+            <p style="font-size: 22px; margin-bottom: 12px;">CONTACT</p>
+            <p style="font-size: 14px; margin-bottom: 5px;">고객센터 : 02-000-000</p>
+            <p style="font-size: 14px; margin-bottom: 5px;">-오전 10시 ~ 오후 6시까지 운영</p>
+            <p style="font-size: 14px;">-주말 및 공휴일, 점심시간(12:00~13:00) 제외</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="/js/mypageMod.js"></script>
+</body>
+
+</html>

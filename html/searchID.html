@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRS</title>
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/fe66068d41.js" crossorigin="anonymous"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="/css/searchID.css">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style>
+        a:link,
+        a:visited {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="wrap_logo">
+            <a href="/html/mainpage.html"><img src="/img/logo.png" alt=""></a>
+        </div>
+    </nav>
+    <main>
+        <form method="post" action="서버url" id="searchID_form">
+            <div class="wrap_main1">
+                <i class="fa-regular fa-envelope" id="email_icon"></i><input type="text" name="email" placeholder="이메일을 입력해주세요.">
+                <p>이메일로 아이디가 전송됩니다.</p>
+            </div>
+
+            <div class="wrap_main2">
+                <button class="searchID_btn">아이디 찾기</button>
+            </div>
+        </form> 
+    </main>
+</body>
+
+</html>

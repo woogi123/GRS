@@ -1,0 +1,33 @@
+{
+    "code": 200,
+    "httpStatus": "OK",
+    "message": "요청에 성공하였습니다.",
+		"data": {
+        "banks" : [
+            { 
+								"bankCode" : "eca",
+								"bankName" : "한국수출은행환율" 
+						},
+            {  
+								"bankCode" : "nh",
+								"bankName" : "농협환율"  
+						},
+            {  
+								"bankCode" : "sh",
+								"bankName" : "신한은행환율" 
+						},
+						{  
+								"bankCode" : "kr",
+								"bankName" : "한국은행환율"  
+						},
+            {  
+								"bankCode" : "ha",
+								"bankName" : "하나은행환율"  
+						},
+            {  
+								"bankCode" : "kb",
+								"bankName" : "국민은행환율" 
+						}
+        ]
+		}
+}

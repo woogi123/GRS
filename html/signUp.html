@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRS</title>
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/fe66068d41.js" crossorigin="anonymous"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="/css/signUp.css">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style>
+        a:link,
+        a:visited {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="wrap_logo">
+            <a href="/html/mainpage.html"><img src="/img/logo.png" alt=""></a>
+        </div>
+    </nav>
+    <main>
+        <div id="signUp_form">
+            <div class="wrap_main1">
+            <div class="main_top"><img src="/img/user.png" alt=""><input type="text" name="userId" id="userId" placeholder="ID" ></div>
+            <div class="main_box"><img src="/img/lock.png" alt=""><input type="password" name="password" id="password"placeholder="PW" ></div>
+            <div class="main_bottom1"><img src="/img/email.png" alt=""><input type="email" name="email" id="email" placeholder="아이디,비밀번호 분실시 확인용 이메일"></div>    
+            </div>
+            <div class="wrap_main2">
+            <div class="main_top"><img src="/img/user.png" alt=""><input type="text" name="userName" id="userName"placeholder="이름"></div>    
+            <div class="main_box"><img src="/img/emoji.png" alt=""><input type="text" name="nickName" id="nickName" placeholder="닉네임"></div>   
+            <div class="main_box"><img src="/img/cd.png" alt=""><input type="text" name="birthDay" id="birthDay"placeholder="생년월일 여덟자리"></div>   
+            <div class="main_bottom2">
+                <label for="check" class="check_label"><span>[필수]</span>인증약관 전체동의</label>
+                <input type="checkbox" name="check" id="check" />
+            </div>   
+            </div>
+            <div class="wrap_main1">
+                <button class="signUp_btn" onclick="onSubmitSignup();"><b>가입하기</b></button>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="/js/signUp.js"></script>
+</body>
+
+</html>

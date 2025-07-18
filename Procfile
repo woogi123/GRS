@@ -1,1 +1,0 @@
-web: java -Duser.timezone='Asia/Seoul' -jar /var/app/current/application.jar

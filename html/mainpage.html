@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인페이지</title>
+    <script src="https://kit.fontawesome.com/fe66068d41.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/mainpage.css">
+   
+
+    <style>
+        a:link:not(.a-community),
+        a:visited:not(.a-community) {
+            color: black;
+        }
+
+        .a-community {
+            color: #0029BA;
+            padding-bottom: 10px;
+            border-bottom: solid 5px #0029BA;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <div class="wrap_logo">
+            <a href="#"><img src="../img/logo.png" alt=""></a>
+        </div>
+        <div class="wrap_menu">
+            <ul class="menu">
+                <li>
+                    <a href="./community.html" class="a-community">커뮤니티</a>
+                </li>
+                <li>
+                    <a href="./exchangeRate.html" class="a-exchange">환율</a>
+                </li>
+                <li class="menu-price">
+                    <a href="./pricecomparison.html" class="a-price">가격비교</a>
+                </li>
+                <li class="menu-customer">
+                    <a href="#" class="a-customer">고객지원</a>
+                </li>
+            </ul>
+        </div>
+        <div class="wrap_login-bar">
+            <ul class="login-bar">
+                <li>
+                    <a href="./login.html">로그인</a>
+                </li>
+                <li>
+                    <a href="./signUp.html">회원가입</a>
+                </li>
+            </ul>
+        </div>
+        <div class="wrap_search">
+            <input type="text" placeholder="검색어를 입력해 주세요.">
+            <i class="fas fa-search"></i>
+        </div>
+    </nav>
+    <div class="wrap-map">
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d121866693.79577167!2d104.04626221372179!3d9.043335541786922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sko!2skr!4v1689150658038!5m2!1sko!2skr" width="989" height="589" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="map-sub">
+            <div class="map-text">
+                <p>선택지역: 아프리카</p>
+                <p>추천 여행지: 이집트</p>
+                <p>고위험군 여행지:</p>
+            </div>
+            <div class="button">
+                <button class="button-map" type="button">아프리카 관련 커뮤니티 가기</button>
+            </div>
+        </div>
+    </div>
+    <div class="wrap-infotorate">
+        <div class="wrap-myinfo">
+            <div class="wrap-myinfo-sub">
+                <h2>내 정보</h2>
+                <div class="my-whole-see">
+                    <a href="./mypage.html">전체보기</a>
+                </div>
+            </div>
+            <div class="container-myinfo">
+                <div class="myinfo">
+                    <img class="my-img" src="../img/user.png" style="width:86px;height:86px;">
+                </div>
+                <div class="name">
+                    <p>홍길동</p>
+                    <p>user1@gmail.com</p>
+                    <p>자유로운 여행가</p>
+                    <div>
+                        <button onclick="location.href='./mypageMod.html'" class="button-my" type="button">회원정보 수정</button>
+                    </div>
+                </div>
+            </div>
+            <div class="intnation">
+                <h2>관심국가</h2>
+                <div id="wrap-intnation"></div>
+                <!-- <div class="nation">
+                    <img class="nation-img" src="../img/germany.jpg" alt="germany">
+                    <a href="#">독일</a>
+                </div>
+                <div class="nation">
+                    <img class="nation-img" src="../img/spain.png">
+                    <a href="#">스페인</a>
+                </div>
+                <div class="nation">
+                    <img class="nation-img" src="../img/turkey.png">
+                    <a href="#">튀르키예</a>
+                </div> -->
+            </div>
+        </div>
+        <div class="wrap-hot">
+            <div class="hot">
+                <div class="wrap-hotsub">
+                    <h2>HOT 게시물</h2>
+                    <div class="hot-whole-see">
+                        <a href="./community.html">전체보기</a>
+                    </div>
+                </div>
+                <div class="collum">
+                    <div id="wrap-hot-writes"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="wrap-monrate">
+            <div class="monrate">
+                <h2>오늘 환율</h2>
+                <div id="today-exchangeRate"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="wrap_company">
+            <p style="font-size: 22px; margin-bottom: 12px;">COMPANY</p>
+            <p style="font-size: 14px; margin-bottom: 5px;">(주)어쩌고</p>
+            <p style="font-size: 14px;">사업자번호 : 123-45-67890</p>
+        </div>
+        <div class="wrap_contact">
+            <p style="font-size: 22px; margin-bottom: 12px;">CONTACT</p>
+            <p style="font-size: 14px; margin-bottom: 5px;">고객센터 : 02-000-000</p>
+            <p style="font-size: 14px; margin-bottom: 5px;">-오전 10시 ~ 오후 6시까지 운영</p>
+            <p style="font-size: 14px;">-주말 및 공휴일, 점심시간(12:00~13:00) 제외</p>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/hot.js"></script>
+    <script src="../js/changerate_nation.js"></script>
+    <script src="../js/intnation.js"></script>
+
+</body>
+
+</html>
